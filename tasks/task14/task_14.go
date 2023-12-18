@@ -14,5 +14,7 @@ func RecognizeType(unknown interface{}) {
 		fmt.Println("string value")
 	case chan int:
 		fmt.Println("chan int value")
+	default:
+		fmt.Println("Unknown value")
 	}
 }

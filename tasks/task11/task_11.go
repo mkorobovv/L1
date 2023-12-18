@@ -2,9 +2,9 @@ package task11
 
 func Intersection(firstSet []int, secondSet []int) []int {
 
-	hashTable := make(map[int]int)
+	hashTable := make(map[int]bool)
 	for _, elem := range firstSet {
-		hashTable[elem] += 1
+		hashTable[elem] = true
 	}
 	var resulSet []int
 	for _, elem := range secondSet {

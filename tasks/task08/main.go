@@ -1,4 +1,6 @@
-package task8
+package main
+
+import "fmt"
 
 func SetBit(num int64, position int64, val int) int64 {
 	/*
@@ -24,4 +26,11 @@ func SetBit(num int64, position int64, val int) int64 {
 		num |= mask
 	}
 	return num
+}
+
+func main() {
+	var number int64 = 5 // in bits 00..0101
+	var pos int64 = 1
+	val := 1                              //  Поставим 1 в позицию 1
+	fmt.Println(SetBit(number, pos, val)) // Таким образом получаем число 00..0111 или же 7
 }

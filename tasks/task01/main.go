@@ -1,4 +1,4 @@
-package task1
+package main
 
 import "fmt"
 
@@ -16,4 +16,9 @@ type Action struct {
 
 func (h Human) DoSomething() {
 	fmt.Println("Humand method DoSomething()...")
+}
+
+func main() {
+	action := Action{}
+	action.DoSomething()
 }
