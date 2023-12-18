@@ -6,15 +6,14 @@ import (
 )
 
 func UniqueSymbols(word string) bool {
-	cache := make(map[rune]uint16)
+	cache := make(map[rune]struct{})
 	lowerString := strings.ToLower(word)
 	for _, v := range lowerString {
 
-		if _, ok := cache[v]; !ok {
-			cache[v] = 1
-		} else {
+		if _, ok := cache[v]; ok {
 			return false
 		}
+		cache[v] = struct{}{}
 	}
 
 	return true
