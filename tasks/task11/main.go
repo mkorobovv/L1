@@ -1,4 +1,6 @@
-package task11
+package main
+
+import "fmt"
 
 func Intersection(firstSet []int, secondSet []int) []int {
 
@@ -13,4 +15,10 @@ func Intersection(firstSet []int, secondSet []int) []int {
 		}
 	}
 	return resulSet
+}
+
+func main() {
+	setOne := []int{1, 2, 10, -30, 4, 6}
+	setTwo := []int{4, 0, -10, -30, 1, 3}
+	fmt.Println(Intersection(setOne, setTwo))
 }

@@ -1,4 +1,6 @@
-package task16
+package main
+
+import "fmt"
 
 func partition(arr []int, low, high int) ([]int, int) {
 	pivot := arr[high]
@@ -25,4 +27,9 @@ func quickSort(arr []int, low, high int) []int {
 
 func QuickSortStart(arr []int) []int {
 	return quickSort(arr, 0, len(arr)-1)
+}
+
+func main() {
+	var array = []int{20, 3, 1, 22, 4, -5, -2, -10, 0, 33}
+	fmt.Println(QuickSortStart(array))
 }

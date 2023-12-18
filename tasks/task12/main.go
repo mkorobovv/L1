@@ -1,4 +1,6 @@
-package task12
+package main
+
+import "fmt"
 
 func MakeSetFromSequence(sequence []string) map[string]bool {
 	set := make(map[string]bool)
@@ -6,4 +8,9 @@ func MakeSetFromSequence(sequence []string) map[string]bool {
 		set[elem] = true
 	}
 	return set
+}
+
+func main() {
+	elements := []string{"cat", "dog", "bird", "dog", "dog", "cat"}
+	fmt.Println(MakeSetFromSequence(elements))
 }

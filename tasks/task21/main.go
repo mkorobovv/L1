@@ -1,4 +1,4 @@
-package task21
+package main
 
 import "fmt"
 
@@ -18,6 +18,7 @@ func (msu *MSUUniversity) MSUMajors() {
 	fmt.Println("MSU Majors: {Biology, Philosophy}")
 }
 
+// Пустой класс HSEUniversity
 type HSEUniversity struct{}
 
 func (hse *HSEUniversity) HSEMajors() {
@@ -68,4 +69,12 @@ func NewHSEAdapter(hse *HSEUniversity) UniverstyAdapter {
 
 func (adapter *HSEAdapter) Majors() {
 	adapter.HSEMajors()
+}
+
+func main() {
+	universityList := [3]UniverstyAdapter{NewMAIAdapter(&MAIUniversity{}), NewMSUAdapter(&MSUUniversity{}), NewHSEAdapter(&HSEUniversity{})}
+
+	for _, member := range universityList {
+		member.Majors()
+	}
 }

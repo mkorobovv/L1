@@ -1,6 +1,9 @@
-package task20
+package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func ReverseSentence(s string) string {
 	var arrayOfWords = strings.Split(s, " ")
@@ -12,4 +15,9 @@ func ReverseSentence(s string) string {
 		right--
 	}
 	return strings.Join(arrayOfWords, " ")
+}
+
+func main() {
+	var words = "sun dog snow"
+	fmt.Println("Исходное предложение: ", words, "\nПосле исполнения функции: ", ReverseSentence(words))
 }

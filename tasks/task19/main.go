@@ -1,4 +1,6 @@
-package task19
+package main
+
+import "fmt"
 
 func ReverseLetters(str string) string {
 	// Так как тип strin неизменяемый, создадим массив рун из строки
@@ -18,4 +20,9 @@ func ReverseLetters(str string) string {
 		ToString память выделяется под новый срез (слайс), который по сути, того же размера что и исходный массив.
 	*/
 	return string(resultString[:])
+}
+
+func main() {
+	var testSting = "главрыба"
+	fmt.Println(testSting, ReverseLetters(testSting))
 }

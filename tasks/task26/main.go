@@ -1,6 +1,9 @@
-package task26
+package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func UniqueSymbols(word string) bool {
 	cache := make(map[rune]uint16)
@@ -15,4 +18,11 @@ func UniqueSymbols(word string) bool {
 	}
 
 	return true
+}
+
+func main() {
+	letter1 := "abcdefghijklmnopqrstuvwxyz"
+	fmt.Println(UniqueSymbols(letter1))
+	letter2 := "aBbcde"
+	fmt.Println(UniqueSymbols(letter2))
 }
