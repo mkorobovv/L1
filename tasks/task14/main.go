@@ -2,33 +2,17 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
-func RecognizeType(unknown interface{}) {
-	switch unknown.(type) {
-	case int:
-		fmt.Println("int value")
-	case bool:
-		fmt.Println("bool value")
-	case string:
-		fmt.Println("string value")
-	case chan int:
-		fmt.Println("chan int value")
-	default:
-		fmt.Println("Unknown value")
-	}
+func RecognizeType(unknown interface{}) reflect.Value {
+	return reflect.ValueOf(unknown)
 }
 
 func main() {
-	chanvar := make(chan int)
-	RecognizeType(chanvar)
-
-	intvar := 5
-	RecognizeType(intvar)
-
-	boolvar := false
-	RecognizeType(boolvar)
-
-	stringvar := "hello"
-	RecognizeType(stringvar)
+	arrOfTypes := []interface{}{'a', "hello", 5, 0.23, true, struct{}{}}
+	for _, typ := range arrOfTypes {
+		typ := RecognizeType(typ)
+		fmt.Printf("Value: %v, type: %s\n", typ, typ.Kind().String())
+	}
 }
