@@ -7,7 +7,7 @@ import (
 
 func createHugeString(size int) string {
 	var str strings.Builder
-
+	// Создадим большую строку с помощью стринг билдера
 	for i := 0; i < size; i++ {
 		fmt.Fprint(&str, "a")
 	}
@@ -24,9 +24,12 @@ func someFunc() {
 		Чтобы исправить это, можно скопировать нужную часть строки в новую переменную, чтобы избежать сохранения ссылки на оригинальную строку.
 	*/
 	v := createHugeString(1 << 10)
-	justString := v[:100]
+	byteSlice := make([]byte, 100)
+
+	copy(byteSlice, v[:100])
+	justString := string(byteSlice)
 	v = ""
-	fmt.Println(string(justString))
+	fmt.Println(justString)
 }
 
 func main() {
